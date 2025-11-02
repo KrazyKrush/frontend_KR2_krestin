@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кирилл | ЭФБО-05-24 | Постапокалиптическое портфолио</title>
+    <link href="styles/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo random-glitch">
+                <i class="fas fa-terminal"></i>
+                <span>KIRILL_EFBO-05-24</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link nav__link--active">Главная</a></li>
+                    <li><a href="assets/skills.html" class="nav__link">Навыки</a></li>
+                    <li><a href="assets/projects.html" class="nav__link">Проекты</a></li>
+                    <li><a href="assets/diary.html" class="nav__link">Дневник</a></li>
+                    <li><a href="assets/contacts.html" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero__content">
+            <div class="hero__text">
+                <h1 class="hero__title glitch-text" data-text="КИРИЛЛ">КИРИЛЛ</h1>
+                <p class="hero__subtitle">ЭФБО-05-24 | ВЫЖИВШИЙ РАЗРАБОТЧИК</p>
+                <div class="terminal">
+                    <div class="terminal__text">
+                        > SYSTEM BOOT: COMPLETE<br>
+                        > USER IDENTIFIED: KIRILL_EFBO-05-24<br>
+                        > STATUS: ACTIVE<br>
+                        > LOCATION: POST-APOCALYPTIC WASTELAND<br>
+                        > MISSION: SURVIVE AND CREATE<span class="terminal__cursor"></span>
+                    </div>
+                </div>
+                <p class="hero__description">
+                    В мире, где остались лишь обломки цивилизации, я продолжаю создавать. 
+                    Мой код — это последний оплот технологий в эпоху тьмы. 
+                    Каждая строка — это вызов забвению, каждый проект — надежда на возрождение.
+                </p>
+                <div class="hero__buttons">
+                    <a href="projects.html" class="btn">Мои проекты</a>
+                    <a href="contact.html" class="btn btn--accent">Установить связь</a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <img src="https://images.unsplash.com/photo-1541336032412-2048a677540d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Постапокалиптический пейзаж">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section__title glitch-text" data-text="НАВЫКИ ВЫЖИВАНИЯ">НАВЫКИ ВЫЖИВАНИЯ</h2>
+            <div class="skills__container">
+                <div class="skill-card">
+                    <div class="skill-card__icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="skill-card__title">HTML/CSS</h3>
+                    <p class="skill-card__description">Создание укрытий и убежищ в цифровой пустоши. Адаптация к любым условиям.</p>
+                    <div class="skill-card__progress">
+                        <div class="skill-card__progress-bar" data-width="90"></div>
+                    </div>
+                    <div class="skill-card__percentage">90%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3 class="skill-card__title">JavaScript</h3>
+                    <p class="skill-card__description">Оживление механизмов в мире без электричества. Автоматизация процессов выживания.</p>
+                    <div class="skill-card__progress">
+                        <div class="skill-card__progress-bar" data-width="80"></div>
+                    </div>
+                    <div class="skill-card__percentage">80%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="skill-card__title">React</h3>
+                    <p class="skill-card__description">Сборка сложных систем из уцелевших компонентов. Модульный подход к реконструкции.</p>
+                    <div class="skill-card__progress">
+                        <div class="skill-card__progress-bar" data-width="70"></div>
+                    </div>
+                    <div class="skill-card__percentage">70%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section__title glitch-text" data-text="ПРОЕКТЫ ВОЗРОЖДЕНИЯ">ПРОЕКТЫ ВОЗРОЖДЕНИЯ</h2>
+            <div class="projects__container">
+                <div class="project-card">
+                    <div class="project-card__image">
+                        <img src="https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Убежище">
+                        <div class="project-card__overlay">
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">ЦИФРОВОЕ УБЕЖИЩЕ</h3>
+                        <p class="project-card__description">Защищенная база знаний и технологий для выживания в постапокалиптическом мире.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">HTML</span>
+                            <span class="project-card__tag">CSS</span>
+                            <span class="project-card__tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card__image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Система коммуникации">
+                        <div class="project-card__overlay">
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">СИСТЕМА КОММУНИКАЦИИ</h3>
+                        <p class="project-card__description">Децентрализованная сеть для связи между уцелевшими сообществами.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">JavaScript</span>
+                            <span class="project-card__tag">Node.js</span>
+                            <span class="project-card__tag">WebSockets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diary Section -->
+    <section class="diary" id="diary">
+        <div class="container">
+            <h2 class="section__title glitch-text" data-text="ДНЕВНИК ВЫЖИВАНИЯ">ДНЕВНИК ВЫЖИВАНИЯ</h2>
+            <div class="diary__container">
+                <div class="diary__progress">
+                    <h3 class="diary__progress-title">ТЕКУЩИЕ МИССИИ</h3>
+                    <div class="progress-item">
+                        <div class="progress-item__header">
+                            <span class="progress-item__name">Восстановление сети</span>
+                            <span class="progress-item__percentage">90%</span>
+                        </div>
+                        <div class="progress-item__bar">
+                            <div class="progress-item__fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-item__header">
+                            <span class="progress-item__name">Оцифровка знаний</span>
+                            <span class="progress-item__percentage">70%</span>
+                        </div>
+                        <div class="progress-item__bar">
+                            <div class="progress-item__fill" data-width="70"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-item__header">
+                            <span class="progress-item__name">Создание убежища</span>
+                            <span class="progress-item__percentage">50%</span>
+                        </div>
+                        <div class="progress-item__bar">
+                            <div class="progress-item__fill" data-width="50"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="diary__entries">
+                    <div class="diary-entry">
+                        <div class="diary-entry__header">
+                            <span class="diary-entry__date">ДЕНЬ 347</span>
+                            <span class="diary-entry__status diary-entry__status--completed">
+                                <i class="fas fa-check-circle"></i> ВЫПОЛНЕНО
+                            </span>
+                        </div>
+                        <h4 class="diary-entry__title">Восстановление энергосети</h4>
+                        <p>Нашел рабочий генератор и восстановил подачу энергии в главном терминале. Система работает стабильно.</p>
+                    </div>
+                    <div class="diary-entry">
+                        <div class="diary-entry__header">
+                            <span class="diary-entry__date">ДЕНЬ 345</span>
+                            <span class="diary-entry__status diary-entry__status--completed">
+                                <i class="fas fa-check-circle"></i> ВЫПОЛНЕНО
+                            </span>
+                        </div>
+                        <h4 class="diary-entry__title">Защита от внешних угроз</h4>
+                        <p>Установил дополнительные firewall и системы шифрования. Безопасность базы повышена.</p>
+                    </div>
+                    <div class="diary-entry">
+                        <div class="diary-entry__header">
+                            <span class="diary-entry__date">ДЕНЬ 343</span>
+                            <span class="diary-entry__status diary-entry__status--in-progress">
+                                <i class="fas fa-sync-alt"></i> В ПРОЦЕССЕ
+                            </span>
+                        </div>
+                        <h4 class="diary-entry__title">Сканирование эфира</h4>
+                        <p>Пытаюсь обнаружить другие выжившие сообщества. Пока безрезультатно, но я не теряю надежды.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="languages" id="languages">
+        <div class="container">
+            <h2 class="section__title glitch-text" data-text="ЯЗЫКИ КОММУНИКАЦИИ">ЯЗЫКИ КОММУНИКАЦИИ</h2>
+            <div class="languages__container">
+                <div class="language-card">
+                    <div class="language-card__flag">🇷🇺</div>
+                    <h3 class="language-card__name">Русский</h3>
+                    <p class="language-card__level">Родной</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-card__flag">🇺🇸</div>
+                    <h3 class="language-card__name">Английский</h3>
+                    <p class="language-card__level">B2 Upper-Intermediate</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-card__flag">🇩🇪</div>
+                    <h3 class="language-card__name">Немецкий</h3>
+                    <p class="language-card__level">A2 Elementary</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__about">
+                    <h3 class="footer__section-title">О ВЫЖИВШЕМ</h3>
+                    <p>Кирилл, группа ЭФБО-05-24. Один из немногих, кто сохранил знания технологий в постапокалиптическом мире.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fas fa-satellite-dish"></i></a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__section-title">НАВИГАЦИЯ</h3>
+                    <ul>
+                        <li class="footer__link"><a href="index.html"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                        <li class="footer__link"><a href="assets/skills.html"><i class="fas fa-chevron-right"></i> Навыки</a></li>
+                        <li class="footer__link"><a href="assets/rojects.html"><i class="fas fa-chevron-right"></i> Проекты</a></li>
+                        <li class="footer__link"><a href="assets/diary.html"><i class="fas fa-chevron-right"></i> Дневник</a></li>
+                        <li class="footer__link"><a href="assets/contacts.html"><i class="fas fa-chevron-right"></i> Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__section-title">КОНТАКТЫ</h3>
+                    <div class="footer__contact-item">
+                        <i class="fas fa-satellite"></i>
+                        <span>Частота: 147.825 MHz</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Сектор 7-G, Бывшая Москва</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Кодовое слово: "ВОЗРОЖДЕНИЕ"</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2023 ПОСЛЕДНИЙ ОПЛОТ ТЕХНОЛОГИЙ. ВСЕ СИСТЕМЫ АКТИВНЫ.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Анимация прогресс-баров при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.skill-card__progress-bar, .progress-item__fill');
+            
+            function animateProgressBars() {
+                progressBars.forEach(bar => {
+                    const rect = bar.getBoundingClientRect();
+                    const isVisible = (rect.top <= window.innerHeight && rect.bottom >= 0);
+                    
+                    if (isVisible) {
+                        const width = bar.getAttribute('data-width') + '%';
+                        if (bar.style.width !== width) {
+                            bar.style.width = width;
+                        }
+                    }
+                });
+            }
+            
+            // Запускаем анимацию при загрузке
+            animateProgressBars();
+            
+            // И при скролле
+            window.addEventListener('scroll', animateProgressBars);
+            
+            // Плавная прокрутка для навигации
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Подсветка активного пункта меню при скролле
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav__link');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('nav__link--active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('nav__link--active');
+                    }
+                });
+            });
+
+            // Случайные глюки
+            function randomGlitch() {
+                const elements = document.querySelectorAll('.random-glitch');
+                elements.forEach(el => {
+                    if (Math.random() > 0.7) {
+                        el.style.animation = 'none';
+                        setTimeout(() => {
+                            el.style.animation = '';
+                        }, 100);
+                    }
+                });
+                
+                // Случайное изменение цвета некоторых элементов
+                if (Math.random() > 0.9) {
+                    document.body.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+                    setTimeout(() => {
+                        document.body.style.filter = '';
+                    }, 200);
+                }
+            }
+            
+            setInterval(randomGlitch, 3000);
+        });
+    </script>
+</body>
+</html>

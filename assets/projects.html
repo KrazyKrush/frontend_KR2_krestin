@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты | Кирилл ЭФБО-05-24</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo random-glitch">
+                <i class="fas fa-terminal"></i>
+                <span>KIRILL_EFBO-05-24</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="../index.html" class="nav__link">Главная</a></li>
+                    <li><a href="skills.html" class="nav__link">Навыки</a></li>
+                    <li><a href="projects.html" class="nav__link nav__link--active">Проекты</a></li>
+                    <li><a href="diary.html" class="nav__link">Дневник</a></li>
+                    <li><a href="contacts.html" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                    <a href="index.html" class="breadcrumbs__link">Главная</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="projects.html" class="breadcrumbs__link">Проекты</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title glitch-text" data-text="ПРОЕКТЫ ВОЗРОЖДЕНИЯ">ПРОЕКТЫ ВОЗРОЖДЕНИЯ</h1>
+            
+            <div class="terminal">
+                <div class="terminal__text">
+                    > ЗАПУСК АРХИВА ПРОЕКТОВ...<br>
+                    > ОБНАРУЖЕНО: 6 АКТИВНЫХ ПРОЕКТОВ<br>
+                    > СТАТУС: В РАЗРАБОТКЕ / ЗАВЕРШЕНО<br>
+                    > ДОСТУП К ДЕМО: АКТИВИРОВАТЬ ПРОСМОТР<span class="terminal__cursor"></span>
+                </div>
+            </div>
+
+            <!-- Project Filter -->
+            <div class="terminal" style="margin: 30px 0;">
+                <div class="terminal__text">
+                    > ФИЛЬТР ПРОЕКТОВ: 
+                    <button class="btn" onclick="filterProjects('all')" style="margin: 0 5px; padding: 5px 10px;">ВСЕ</button>
+                    <button class="btn" onclick="filterProjects('web')" style="margin: 0 5px; padding: 5px 10px;">ВЕБ</button>
+                    <button class="btn" onclick="filterProjects('mobile')" style="margin: 0 5px; padding: 5px 10px;">МОБИЛЬНЫЕ</button>
+                    <button class="btn" onclick="filterProjects('ai')" style="margin: 0 5px; padding: 5px 10px;">ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ</button>
+                </div>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-card__image">
+                        <img src="https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Цифровое убежище">
+                        <div class="project-card__overlay">
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__link" onclick="showProjectDemo(1)"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">ЦИФРОВОЕ УБЕЖИЩЕ</h3>
+                        <p class="project-card__description">Защищенная база знаний и технологий для выживания в постапокалиптическом мире.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">HTML</span>
+                            <span class="project-card__tag">CSS</span>
+                            <span class="project-card__tag">JavaScript</span>
+                            <span class="project-card__tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="mobile">
+                    <div class="project-card__image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Система коммуникации">
+                        <div class="project-card__overlay">
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__link" onclick="showProjectDemo(2)"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">СИСТЕМА КОММУНИКАЦИИ</h3>
+                        <p class="project-card__description">Децентрализованная сеть для связи между уцелевшими сообществами.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">React Native</span>
+                            <span class="project-card__tag">WebSockets</span>
+                            <span class="project-card__tag">P2P</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ai">
+                    <div class="project-card__image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="ИИ-помощник">
+                        <div class="project-card__overlay">
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__link" onclick="showProjectDemo(3)"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">ИИ-ПОМОЩНИК ВЫЖИВАНИЯ</h3>
+                        <p class="project-card__description">Искусственный интеллект для анализа угроз и планирования ресурсов.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Python</span>
+                            <span class="project-card__tag">TensorFlow</span>
+                            <span class="project-card__tag">ML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-card__image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Карта ресурсов">
+                        <div class="project-card__overlay">
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__link" onclick="showProjectDemo(4)"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">КАРТА РЕСУРСОВ</h3>
+                        <p class="project-card__description">Интерактивная карта с маркировкой безопасных зон и источников ресурсов.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">JavaScript</span>
+                            <span class="project-card__tag">Leaflet</span>
+                            <span class="project-card__tag">API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="mobile">
+                    <div class="project-card__image">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Сканер угроз">
+                        <div class="project-card__overlay">
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__link" onclick="showProjectDemo(5)"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">СКАНЕР УГРОЗ</h3>
+                        <p class="project-card__description">Мобильное приложение для обнаружения радиации и биологических угроз.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">React Native</span>
+                            <span class="project-card__tag">Sensors</span>
+                            <span class="project-card__tag">IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ai">
+                    <div class="project-card__image">
+                        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Предиктор погоды">
+                        <div class="project-card__overlay">
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__link" onclick="showProjectDemo(6)"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">ПРЕДИКТОР ПОГОДЫ</h3>
+                        <p class="project-card__description">Система прогнозирования аномальных погодных условий на основе ИИ.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Python</span>
+                            <span class="project-card__tag">ML</span>
+                            <span class="project-card__tag">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Demo Modal -->
+            <div id="projectDemo" class="terminal" style="display: none; margin-top: 40px;">
+                <div class="terminal__text" id="demoContent">
+                    <!-- Demo content will be loaded here -->
+                </div>
+                <button class="btn" onclick="closeProjectDemo()" style="margin-top: 20px;">ЗАКРЫТЬ ДЕМО</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__about">
+                    <h3 class="footer__section-title">О ВЫЖИВШЕМ</h3>
+                    <p>Кирилл, группа ЭФБО-05-24. Один из немногих, кто сохранил знания технологий в постапокалиптическом мире.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fas fa-satellite-dish"></i></a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__section-title">НАВИГАЦИЯ</h3>
+                    <ul>
+                        <li class="footer__link"><a href="index.html"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                        <li class="footer__link"><a href="skills.html"><i class="fas fa-chevron-right"></i> Навыки</a></li>
+                        <li class="footer__link"><a href="projects.html"><i class="fas fa-chevron-right"></i> Проекты</a></li>
+                        <li class="footer__link"><a href="diary.html"><i class="fas fa-chevron-right"></i> Дневник</a></li>
+                        <li class="footer__link"><a href="contacts.html"><i class="fas fa-chevron-right"></i> Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__section-title">КОНТАКТЫ</h3>
+                    <div class="footer__contact-item">
+                        <i class="fas fa-satellite"></i>
+                        <span>Частота: 147.825 MHz</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Сектор 7-G, Бывшая Москва</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Кодовое слово: "ВОЗРОЖДЕНИЕ"</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2023 ПОСЛЕДНИЙ ОПЛОТ ТЕХНОЛОГИЙ. ВСЕ СИСТЕМЫ АКТИВНЫ.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Project filtering
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project-card');
+            
+            projects.forEach(project => {
+                if (category === 'all' || project.getAttribute('data-category') === category) {
+                    project.style.display = 'block';
+                    setTimeout(() => {
+                        project.style.opacity = '1';
+                        project.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    project.style.opacity = '0';
+                    project.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        project.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Project demo functionality
+        function showProjectDemo(projectId) {
+            const demoModal = document.getElementById('projectDemo');
+            const demoContent = document.getElementById('demoContent');
+            
+            const demos = {
+                1: `
+                    > ДЕМО: ЦИФРОВОЕ УБЕЖИЩЕ<br>
+                    > ЗАПУСК СИМУЛЯЦИИ...<br>
+                    <br>
+                    ██████████████████████████████<br>
+                    █░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>
+                    █░░░░░░░░░░█░░░░░░░░░░█░░░░░░░█<br>
+                    █░░░░[БАЗА]░░█░░░░░░░░█░░░░░░░█<br>
+                    █░░░░░░░░░░█░░░░░░░░░░█░░░░░░░█<br>
+                    █░░░░░░░░░░████████████░░░░░░░█<br>
+                    █░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>
+                    ██████████████████████████████<br>
+                    <br>
+                    > СИСТЕМА БЕЗОПАСНОСТИ: АКТИВНА<br>
+                    > РЕСУРСЫ: 87%<br>
+                    > СОЕДИНЕНИЙ: 12 АКТИВНЫХ<br>
+                `,
+                2: `
+                    > ДЕМО: СИСТЕМА КОММУНИКАЦИИ<br>
+                    > СКАНИРОВАНИЕ КАНАЛОВ...<br>
+                    <br>
+                    📡 ПОИСК СИГНАЛОВ...<br>
+                    🔍 АНАЛИЗ ЧАСТОТ...<br>
+                    <br>
+                    ✅ НАЙДЕНО СИГНАЛОВ: 3<br>
+                    📶 СИЛА СИГНАЛА: 78%<br>
+                    🔒 ШИФРОВАНИЕ: AES-256<br>
+                    <br>
+                    > УСТАНОВЛЕНИЕ СВЯЗИ...<br>
+                    > СОЕДИНЕНИЕ УСТАНОВЛЕНО<br>
+                `,
+                3: `
+                    > ДЕМО: ИИ-ПОМОЩНИК ВЫЖИВАНИЯ<br>
+                    > АКТИВАЦИЯ НЕЙРОСЕТИ...<br>
+                    <br>
+                    ИИ: ПРИВЕТСТВИЕ, ВЫЖИВШИЙ. КАК Я МОГУ ПОМОЧЬ?<br>
+                    <br>
+                    💬 ДОСТУПНЫЕ КОМАНДЫ:<br>
+                    - АНАЛИЗ УГРОЗ<br>
+                    - ПЛАНИРОВАНИЕ РЕСУРСОВ<br>
+                    - ПРОГНОЗ ПОГОДЫ<br>
+                    - КАРТА БЕЗОПАСНОСТИ<br>
+                    <br>
+                    > СИСТЕМА ГОТОВА К РАБОТЕ<br>
+                `,
+                4: `
+                    > ДЕМО: КАРТА РЕСУРСОВ<br>
+                    > ЗАГРУЗКА ГЕОДАННЫХ...<br>
+                    <br>
+                    🗺️ ОБНОВЛЕНИЕ КАРТЫ...<br>
+                    📍 ОПРЕДЕЛЕНИЕ МЕСТОПОЛОЖЕНИЯ...<br>
+                    <br>
+                    ✅ БЕЗОПАСНЫЕ ЗОНЫ: 5<br>
+                    ⚠️ ОПАСНЫЕ ЗОНЫ: 12<br>
+                    💧 ИСТОЧНИКИ ВОДЫ: 3<br>
+                    ⚡ ИСТОЧНИКИ ЭНЕРГИИ: 2<br>
+                    <br>
+                    > КАРТА ОБНОВЛЕНА<br>
+                `,
+                5: `
+                    > ДЕМО: СКАНЕР УГРОЗ<br>
+                    > КАЛИБРОВКА ДАТЧИКОВ...<br>
+                    <br>
+                    📊 СТАТУС ДАТЧИКОВ:<br>
+                    - РАДИАЦИЯ: 📡 АКТИВЕН<br>
+                    - БИОЛОГИЧЕСКИЕ: 🔬 АКТИВЕН<br>
+                    - ХИМИЧЕСКИЕ: ⚗️ АКТИВЕН<br>
+                    <br>
+                    ⚠️ ТЕКУЩИЕ ПОКАЗАНИЯ:<br>
+                    - РАДИАЦИЯ: 0.12 мЗв/ч (НОРМА)<br>
+                    - ВОЗДУХ: ЧИСТЫЙ<br>
+                    - ТЕМПЕРАТУРА: 18°C<br>
+                    <br>
+                    > СИСТЕМА РАБОТАЕТ СТАБИЛЬНО<br>
+                `,
+                6: `
+                    > ДЕМО: ПРЕДИКТОР ПОГОДЫ<br>
+                    > АНАЛИЗ МЕТЕОДАННЫХ...<br>
+                    <br>
+                    🌤️ ТЕКУЩИЕ УСЛОВИЯ:<br>
+                    - ТЕМПЕРАТУРА: 15°C<br>
+                    - ВЛАЖНОСТЬ: 65%<br>
+                    - ДАВЛЕНИЕ: 1013 hPa<br>
+                    - ВЕТЕР: 12 км/ч<br>
+                    <br>
+                    📈 ПРОГНОЗ НА 24 ЧАСА:<br>
+                    - 6ч: ⛅ 14°C<br>
+                    - 12ч: ☁️ 16°C<br>
+                    - 18ч: 🌧️ 13°C<br>
+                    - 24ч: ⛈️ 11°C<br>
+                    <br>
+                    > ПРОГНОЗ СФОРМИРОВАН<br>
+                `
+            };
+            
+            demoContent.innerHTML = demos[projectId] || '> ОШИБКА: ДЕМО НЕДОСТУПНО';
+            demoModal.style.display = 'block';
+            
+            // Анимация появления
+            demoModal.style.opacity = '0';
+            demoModal.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                demoModal.style.opacity = '1';
+                demoModal.style.transform = 'translateY(0)';
+            }, 100);
+        }
+
+        function closeProjectDemo() {
+            const demoModal = document.getElementById('projectDemo');
+            demoModal.style.opacity = '0';
+            demoModal.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                demoModal.style.display = 'none';
+            }, 300);
+        }
+
+        // Initialize all projects visible
+        document.addEventListener('DOMContentLoaded', function() {
+            filterProjects('all');
+        });
+    </script>
+</body>
+</html>
