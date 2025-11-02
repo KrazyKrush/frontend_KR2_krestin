@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Кирилл ЭФБО-05-24</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo random-glitch">
+                <i class="fas fa-terminal"></i>
+                <span>KIRILL_EFBO-05-24</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Главная</a></li>
+                    <li><a href="skills.html" class="nav__link">Навыки</a></li>
+                    <li><a href="projects.html" class="nav__link">Проекты</a></li>
+                    <li><a href="diary.html" class="nav__link">Дневник</a></li>
+                    <li><a href="contacts.html" class="nav__link nav__link--active">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                    <a href="index.html" class="breadcrumbs__link">Главная</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="contacts.html" class="breadcrumbs__link">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title glitch-text" data-text="УСТАНОВКА СВЯЗИ">УСТАНОВКА СВЯЗИ</h1>
+            
+            <div class="terminal">
+                <div class="terminal__text">
+                    > ИНИЦИАЛИЗАЦИЯ ПРОТОКОЛА СВЯЗИ...<br>
+                    > СИСТЕМА КОММУНИКАЦИИ: АКТИВНА<br>
+                    > ШИФРОВАНИЕ: AES-256 ВКЛЮЧЕНО<br>
+                    > СТАТУС: ОЖИДАНИЕ ВХОДЯЩИХ СИГНАЛОВ<span class="terminal__cursor"></span>
+                </div>
+            </div>
+
+            <!-- Signal Scanner -->
+            <div class="terminal" style="margin: 30px 0;">
+                <div class="terminal__text">
+                    > СКАНЕР СИГНАЛОВ: 
+                    <button class="btn" onclick="startSignalScan()" style="margin: 0 5px; padding: 5px 10px;" id="scanButton">
+                        <i class="fas fa-satellite-dish"></i> ЗАПУСТИТЬ СКАНИРОВАНИЕ
+                    </button>
+                    <span id="scanStatus" style="margin-left: 15px;">⚪ ГОТОВ</span>
+                </div>
+                <div id="scanResults" style="margin-top: 15px; display: none;">
+                    <!-- Scan results will appear here -->
+                </div>
+            </div>
+
+            <div class="contacts-grid">
+                <div class="contact-card" onclick="establishConnection('satellite')">
+                    <div class="contact-card__icon">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <h3 class="contact-card__title">СПУТНИКОВАЯ СВЯЗЬ</h3>
+                    <p class="contact-card__info">Частота: 147.825 MHz<br>Шифрование: AES-256</p>
+                    <div class="btn">УСТАНОВИТЬ СВЯЗЬ</div>
+                </div>
+
+                <div class="contact-card" onclick="establishConnection('radio')">
+                    <div class="contact-card__icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3 class="contact-card__title">КОРОТКОВОЛНОВАЯ СВЯЗЬ</h3>
+                    <p class="contact-card__info">Диапазон: 3-30 MHz<br>Дальность: 500km</p>
+                    <div class="btn">УСТАНОВИТЬ СВЯЗЬ</div>
+                </div>
+
+                <div class="contact-card" onclick="establishConnection('quantum')">
+                    <div class="contact-card__icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3 class="contact-card__title">КВАНТОВАЯ СВЯЗЬ</h3>
+                    <p class="contact-card__info">Статус: ЭКСПЕРИМЕНТАЛЬНАЯ<br>Скорость: ∞</p>
+                    <div class="btn">УСТАНОВИТЬ СВЯЗЬ</div>
+                </div>
+
+                <div class="contact-card" onclick="establishConnection('emergency')">
+                    <div class="contact-card__icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <h3 class="contact-card__title">АВАРИЙНЫЙ КАНАЛ</h3>
+                    <p class="contact-card__info">Частота: 121.5 MHz<br>Приоритет: ВЫСОКИЙ</p>
+                    <div class="btn btn--accent">ЭКСТРЕННАЯ СВЯЗЬ</div>
+                </div>
+            </div>
+
+            <!-- Communication Terminal -->
+            <div class="terminal" style="margin-top: 40px;">
+                <div class="terminal__text">
+                    > ТЕРМИНАЛ СВЯЗИ - ГОЛОСОВОЙ ЧАТ<br>
+                    > СТАТУС: <span id="connectionStatus">ОФФЛАЙН</span><br>
+                    > КАНАЛ: <span id="currentChannel">НЕ ВЫБРАН</span><br>
+                    <br>
+                    <div id="chatMessages" style="height: 200px; overflow-y: auto; margin: 10px 0; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 3px;">
+                        <!-- Chat messages will appear here -->
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="messageInput" placeholder="Введите сообщение..." class="form-input" style="flex: 1;">
+                        <button class="btn" onclick="sendMessage()" id="sendButton" disabled>ОТПРАВИТЬ</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3 class="footer__section-title">ФОРМА ЭКСТРЕННОГО СООБЩЕНИЯ</h3>
+                <div class="form-group">
+                    <label class="form-label">ВАШ ИДЕНТИФИКАТОР</label>
+                    <input type="text" class="form-input" id="senderId" placeholder="Введите ваш ID">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">ПРИОРИТЕТ СООБЩЕНИЯ</label>
+                    <select class="form-input" id="messagePriority">
+                        <option value="low">НИЗКИЙ</option>
+                        <option value="normal">НОРМАЛЬНЫЙ</option>
+                        <option value="high">ВЫСОКИЙ</option>
+                        <option value="critical">КРИТИЧЕСКИЙ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">СООБЩЕНИЕ</label>
+                    <textarea class="form-textarea" id="emergencyMessage" placeholder="Введите ваше сообщение..."></textarea>
+                </div>
+                <button class="btn btn--accent" onclick="sendEmergencyMessage()">
+                    <i class="fas fa-paper-plane"></i> ОТПРАВИТЬ ЭКСТРЕННОЕ СООБЩЕНИЕ
+                </button>
+            </div>
+
+            <!-- Encryption Game -->
+            <div class="terminal" style="margin-top: 40px;">
+                <div class="terminal__text">
+                    > ИГРА: ВЗЛОМ ШИФРА<br>
+                    > ЦЕЛЬ: РАСШИФРОВАТЬ СООБЩЕНИЕ<br>
+                    > СЛОЖНОСТЬ: СРЕДНЯЯ<br>
+                    <br>
+                    <div id="encryptionGame">
+                        <p>ЗАШИФРОВАННОЕ СООБЩЕНИЕ: <code id="encryptedMessage">XLI WXSTLIV JVSQ XLI HEBGO</code></p>
+                        <p>АЛГОРИТМ: ЦЕЗАРЬ (СДВИГ: ?)</p>
+                        <input type="number" id="shiftKey" class="form-input" placeholder="Введите сдвиг (1-25)" min="1" max="25" style="width: 200px; margin: 10px 0;">
+                        <button class="btn" onclick="decryptMessage()">РАСШИФРОВАТЬ</button>
+                        <p id="decryptionResult" style="margin-top: 10px;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__about">
+                    <h3 class="footer__section-title">О ВЫЖИВШЕМ</h3>
+                    <p>Кирилл, группа ЭФБО-05-24. Один из немногих, кто сохранил знания технологий в постапокалиптическом мире.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fas fa-satellite-dish"></i></a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__section-title">НАВИГАЦИЯ</h3>
+                    <ul>
+                        <li class="footer__link"><a href="index.html"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                        <li class="footer__link"><a href="skills.html"><i class="fas fa-chevron-right"></i> Навыки</a></li>
+                        <li class="footer__link"><a href="projects.html"><i class="fas fa-chevron-right"></i> Проекты</a></li>
+                        <li class="footer__link"><a href="diary.html"><i class="fas fa-chevron-right"></i> Дневник</a></li>
+                        <li class="footer__link"><a href="contacts.html"><i class="fas fa-chevron-right"></i> Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__section-title">КОНТАКТЫ</h3>
+                    <div class="footer__contact-item">
+                        <i class="fas fa-satellite"></i>
+                        <span>Частота: 147.825 MHz</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Сектор 7-G, Бывшая Москва</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Кодовое слово: "ВОЗРОЖДЕНИЕ"</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2023 ПОСЛЕДНИЙ ОПЛОТ ТЕХНОЛОГИЙ. ВСЕ СИСТЕМЫ АКТИВНЫ.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Signal Scanner
+        let isScanning = false;
+        let currentConnection = null;
+
+        function startSignalScan() {
+            if (isScanning) return;
+            
+            isScanning = true;
+            const scanButton = document.getElementById('scanButton');
+            const scanStatus = document.getElementById('scanStatus');
+            const scanResults = document.getElementById('scanResults');
+            
+            scanButton.innerHTML = '<i class="fas fa-sync fa-spin"></i> СКАНИРОВАНИЕ...';
+            scanButton.disabled = true;
+            scanStatus.innerHTML = '🟡 СКАНИРОВАНИЕ...';
+            scanStatus.style.color = 'yellow';
+            
+            // Имитация сканирования
+            let progress = 0;
+            const scanInterval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress >= 100) {
+                    clearInterval(scanInterval);
+                    completeScan();
+                }
+            }, 500);
+            
+            function completeScan() {
+                isScanning = false;
+                scanButton.innerHTML = '<i class="fas fa-satellite-dish"></i> ПЕРЕЗАПУСТИТЬ СКАНИРОВАНИЕ';
+                scanButton.disabled = false;
+                scanStatus.innerHTML = '🟢 СКАНИРОВАНИЕ ЗАВЕРШЕНО';
+                scanStatus.style.color = '#00ff9d';
+                
+                // Показать результаты
+                scanResults.style.display = 'block';
+                scanResults.innerHTML = `
+                    <div class="terminal__text">
+                        > РЕЗУЛЬТАТЫ СКАНИРОВАНИЯ:<br>
+                        - ОБНАРУЖЕНО СИГНАЛОВ: 3<br>
+                        - СИЛА СИГНАЛА: 78%<br>
+                        - ПОМЕХИ: 12%<br>
+                        - РЕКОМЕНДУЕМЫЙ КАНАЛ: СПУТНИКОВАЯ СВЯЗЬ<br>
+                    </div>
+                `;
+                
+                // Анимация результатов
+                scanResults.style.opacity = '0';
+                scanResults.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    scanResults.style.opacity = '1';
+                    scanResults.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        }
+
+        // Connection Establishment
+        function establishConnection(type) {
+            if (currentConnection === type) return;
+            
+            const connectionStatus = document.getElementById('connectionStatus');
+            const currentChannel = document.getElementById('currentChannel');
+            const sendButton = document.getElementById('sendButton');
+            const chatMessages = document.getElementById('chatMessages');
+            
+            // Анимация отключения предыдущего соединения
+            if (currentConnection) {
+                connectionStatus.innerHTML = '🔴 ОТКЛЮЧЕНИЕ...';
+                connectionStatus.style.color = 'red';
+                
+                setTimeout(() => {
+                    establishNewConnection();
+                }, 1000);
+            } else {
+                establishNewConnection();
+            }
+            
+            function establishNewConnection() {
+                currentConnection = type;
+                
+                const connections = {
+                    'satellite': { name: 'СПУТНИКОВАЯ СВЯЗЬ', status: '🟢 ОНЛАЙН' },
+                    'radio': { name: 'КОРОТКОВОЛНОВАЯ СВЯЗЬ', status: '🟡 НИЗКАЯ СКОРОСТЬ' },
+                    'quantum': { name: 'КВАНТОВАЯ СВЯЗЬ', status: '🔴 ЭКСПЕРИМЕНТАЛЬНАЯ' },
+                    'emergency': { name: 'АВАРИЙНЫЙ КАНАЛ', status: '🟢 ВЫСОКИЙ ПРИОРИТЕТ' }
+                };
+                
+                const conn = connections[type];
+                connectionStatus.innerHTML = conn.status;
+                connectionStatus.style.color = type === 'quantum' ? 'red' : '#00ff9d';
+                currentChannel.innerHTML = conn.name;
+                sendButton.disabled = type === 'quantum';
+                
+                // Очистить чат и добавить системное сообщение
+                chatMessages.innerHTML = '';
+                addChatMessage('СИСТЕМА', `СОЕДИНЕНИЕ УСТАНОВЛЕНО: ${conn.name}`, 'system');
+                
+                if (type !== 'quantum') {
+                    // Имитация входящих сообщений
+                    setTimeout(() => addRandomMessage(), 2000);
+                    setTimeout(() => addRandomMessage(), 5000);
+                }
+                
+                // Анимация
+                const terminal = document.querySelector('.terminal');
+                terminal.style.animation = 'none';
+                setTimeout(() => {
+                    terminal.style.animation = 'random-glitch 0.3s';
+                }, 100);
+            }
+        }
+
+        // Chat functionality
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+            
+            if (message && currentConnection && currentConnection !== 'quantum') {
+                addChatMessage('ВЫ', message, 'user');
+                messageInput.value = '';
+                
+                // Имитация ответа
+                setTimeout(() => addRandomResponse(), 1000 + Math.random() * 2000);
+            }
+        }
+
+        function addChatMessage(sender, message, type) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageElement = document.createElement('div');
+            messageElement.className = `chat-message ${type}`;
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            messageElement.style.marginBottom = '5px';
+            messageElement.style.padding = '5px';
+            messageElement.style.borderRadius = '3px';
+            messageElement.style.background = type === 'system' ? 'rgba(0, 255, 157, 0.1)' : 'rgba(255, 255, 255, 0.05)';
+            
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Анимация нового сообщения
+            messageElement.style.opacity = '0';
+            messageElement.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+                messageElement.style.opacity = '1';
+                messageElement.style.transform = 'translateY(0)';
+            }, 100);
+        }
+
+        function addRandomMessage() {
+            const messages = [
+                "ПРОВЕРКА СВЯЗИ. ПРИЕМ.",
+                "ОБНАРУЖЕНА АНОМАЛИЯ В СЕКТОРЕ 5-Б.",
+                "ТРЕБУЕТСЯ ТЕХНИЧЕСКАЯ ПОДДЕРЖКА.",
+                "РЕСУРСЫ НА ИСХОДЕ. НУЖНА ПОМОЩЬ.",
+                "ПОГОДНЫЕ УСЛОВИЯ УХУДШАЮТСЯ.",
+                "ОБНАРУЖЕН НОВЫЙ ИСТОЧНИК ЭНЕРГИИ."
+            ];
+            const senders = ['БАЗА-АЛЬФА', 'СТАНЦИЯ-7', 'ЛАБОРАТОРИЯ-Х', 'ПОСТ-НАБЛЮДЕНИЯ'];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            const randomSender = senders[Math.floor(Math.random() * senders.length)];
+            
+            addChatMessage(randomSender, randomMessage, 'other');
+        }
+
+        function addRandomResponse() {
+            const responses = [
+                "СООБЩЕНИЕ ПРИНЯТО. ОЖИДАЙТЕ ДАЛЬНЕЙШИХ ИНСТРУКЦИЙ.",
+                "ПОДТВЕРЖДАЕМ ПРИЕМ. СИГНАЛ СТАБИЛЕН.",
+                "ПЕРЕДАЧА ДАННЫХ УСПЕШНА. ПРОДОЛЖАЙТЕ НАБЛЮДЕНИЕ.",
+                "ПОЛУЧЕНО. ОТПРАВЛЯЕМ ПОДКРЕПЛЕНИЕ.",
+                "СИСТЕМА РАБОТАЕТ В ШТАТНОМ РЕЖИМЕ. СПАСИБО ЗА ОБРАТНУЮ СВЯЗЬ."
+            ];
+            
+            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+            addChatMessage('ЦЕНТР УПРАВЛЕНИЯ', randomResponse, 'system');
+        }
+
+        // Emergency Message
+        function sendEmergencyMessage() {
+            const senderId = document.getElementById('senderId').value;
+            const priority = document.getElementById('messagePriority').value;
+            const message = document.getElementById('emergencyMessage').value;
+            
+            if (!senderId || !message) {
+                alert('ЗАПОЛНИТЕ ВСЕ ОБЯЗАТЕЛЬНЫЕ ПОЛЯ!');
+                return;
+            }
+            
+            const priorities = {
+                'low': 'НИЗКИЙ',
+                'normal': 'НОРМАЛЬНЫЙ',
+                'high': 'ВЫСОКИЙ',
+                'critical': 'КРИТИЧЕСКИЙ'
+            };
+            
+            // Имитация отправки
+            const terminal = document.querySelector('.contact-form');
+            terminal.style.animation = 'none';
+            setTimeout(() => {
+                terminal.style.animation = 'random-glitch 0.5s';
+            }, 100);
+            
+            setTimeout(() => {
+                alert(`ЭКСТРЕННОЕ СООБЩЕНИЕ ОТПРАВЛЕНО!\n\nID: ${senderId}\nПриоритет: ${priorities[priority]}\nСтатус: ПЕРЕДАНО В ЦЕНТР УПРАВЛЕНИЯ`);
+                
+                // Очистка формы
+                document.getElementById('senderId').value = '';
+                document.getElementById('messagePriority').value = 'normal';
+                document.getElementById('emergencyMessage').value = '';
+            }, 1500);
+        }
+
+        // Encryption Game
+        function decryptMessage() {
+            const shiftKey = parseInt(document.getElementById('shiftKey').value);
+            const resultElement = document.getElementById('decryptionResult');
+            
+            if (!shiftKey || shiftKey < 1 || shiftKey > 25) {
+                resultElement.innerHTML = '⚠️ ВВЕДИТЕ КОРРЕКТНЫЙ СДВИГ (1-25)';
+                resultElement.style.color = 'red';
+                return;
+            }
+            
+            const encrypted = "XLI WXSTLIV JVSQ XLI HEVGO";
+            let decrypted = '';
+            
+            for (let i = 0; i < encrypted.length; i++) {
+                const char = encrypted[i];
+                if (char >= 'A' && char <= 'Z') {
+                    const code = char.charCodeAt(0) - 65;
+                    const newCode = (code - shiftKey + 26) % 26;
+                    decrypted += String.fromCharCode(newCode + 65);
+                } else {
+                    decrypted += char;
+                }
+            }
+            
+            resultElement.innerHTML = `РАСШИФРОВАННОЕ СООБЩЕНИЕ: <strong>${decrypted}</strong>`;
+            
+            if (shiftKey === 4) {
+                resultElement.innerHTML += '<br>🎉 ПРАВИЛЬНО! ШИФР ВЗЛОМАН!';
+                resultElement.style.color = '#00ff9d';
+                
+                // Анимация успеха
+                const game = document.getElementById('encryptionGame');
+                game.style.animation = 'none';
+                setTimeout(() => {
+                    game.style.animation = 'random-glitch 0.5s';
+                }, 100);
+            } else {
+                resultElement.style.color = 'red';
+            }
+        }
+
+        // Allow Enter key to send messages
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageInput = document.getElementById('messageInput');
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            const emergencyMessage = document.getElementById('emergencyMessage');
+            emergencyMessage.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && e.ctrlKey) {
+                    sendEmergencyMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
