@@ -116,7 +116,10 @@ body::before {
 .nav__link:hover {
     color: var(--accent-color);
 }
-
+/* Hero Section */
+.hero__image {
+    border-radius: 10px;
+}
 /* Breadcrumbs */
 .breadcrumbs {
     padding: 20px 0;

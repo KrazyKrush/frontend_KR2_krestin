@@ -18,7 +18,7 @@
             </div>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li><a href="index.html" class="nav__link">Главная</a></li>
+                    <li><a href="../index.html" class="nav__link">Главная</a></li>
                     <li><a href="skills.html" class="nav__link">Навыки</a></li>
                     <li><a href="projects.html" class="nav__link">Проекты</a></li>
                     <li><a href="diary.html" class="nav__link">Дневник</a></li>
@@ -33,7 +33,7 @@
         <div class="container">
             <ul class="breadcrumbs__list">
                 <li class="breadcrumbs__item">
-                    <a href="index.html" class="breadcrumbs__link">Главная</a>
+                    <a href="../index.html" class="breadcrumbs__link">Главная</a>
                 </li>
                 <li class="breadcrumbs__item">
                     <a href="contacts.html" class="breadcrumbs__link">Контакты</a>
@@ -151,7 +151,7 @@
             </div>
 
             <!-- Encryption Game -->
-            <div class="terminal" style="margin-top: 40px;">
+            <!-- <div class="terminal" style="margin-top: 40px;">
                 <div class="terminal__text">
                     > ИГРА: ВЗЛОМ ШИФРА<br>
                     > ЦЕЛЬ: РАСШИФРОВАТЬ СООБЩЕНИЕ<br>
@@ -165,7 +165,7 @@
                         <p id="decryptionResult" style="margin-top: 10px;"></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
 
@@ -177,15 +177,15 @@
                     <h3 class="footer__section-title">О ВЫЖИВШЕМ</h3>
                     <p>Кирилл, группа ЭФБО-05-24. Один из немногих, кто сохранил знания технологий в постапокалиптическом мире.</p>
                     <div class="footer__social">
-                        <a href="#" class="footer__social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fas fa-satellite-dish"></i></a>
+                        <a href="https://github.com/KrazyKrush" class="footer__social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://t.me/Mr_Loremaster" class="footer__social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.roblox.com/users/551789415/profile" class="footer__social-link"><i class="fas fa-satellite-dish"></i></a>
                     </div>
                 </div>
                 <div class="footer__links">
                     <h3 class="footer__section-title">НАВИГАЦИЯ</h3>
                     <ul>
-                        <li class="footer__link"><a href="index.html"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                        <li class="footer__link"><a href="../index.html"><i class="fas fa-chevron-right"></i> Главная</a></li>
                         <li class="footer__link"><a href="skills.html"><i class="fas fa-chevron-right"></i> Навыки</a></li>
                         <li class="footer__link"><a href="projects.html"><i class="fas fa-chevron-right"></i> Проекты</a></li>
                         <li class="footer__link"><a href="diary.html"><i class="fas fa-chevron-right"></i> Дневник</a></li>
@@ -419,7 +419,7 @@
             }, 100);
             
             setTimeout(() => {
-                alert(`ЭКСТРЕННОЕ СООБЩЕНИЕ ОТПРАВЛЕНО!\n\nID: ${senderId}\nПриоритет: ${priorities[priority]}\nСтатус: ПЕРЕДАНО В ЦЕНТР УПРАВЛЕНИЯ`);
+                alert(`ЭКСТРЕННОЕ СООБЩЕНИЕ ОТПРАВЛЕНО!\n\nID: ${senderId}\nПриоритет: ${priorities[priority]}\nСтатус: ПЕРЕДАНО В ЦЕНТР УПРАВЛЕНИЯ\nА пока можете написать мне на экстренную почту...\nKrestin2006@yandex.ru`);
                 
                 // Очистка формы
                 document.getElementById('senderId').value = '';
@@ -428,47 +428,47 @@
             }, 1500);
         }
 
-        // Encryption Game
-        function decryptMessage() {
-            const shiftKey = parseInt(document.getElementById('shiftKey').value);
-            const resultElement = document.getElementById('decryptionResult');
+        // // Encryption Game
+        // function decryptMessage() {
+        //     const shiftKey = parseInt(document.getElementById('shiftKey').value);
+        //     const resultElement = document.getElementById('decryptionResult');
             
-            if (!shiftKey || shiftKey < 1 || shiftKey > 25) {
-                resultElement.innerHTML = '⚠️ ВВЕДИТЕ КОРРЕКТНЫЙ СДВИГ (1-25)';
-                resultElement.style.color = 'red';
-                return;
-            }
+        //     if (!shiftKey || shiftKey < 1 || shiftKey > 25) {
+        //         resultElement.innerHTML = '⚠️ ВВЕДИТЕ КОРРЕКТНЫЙ СДВИГ (1-25)';
+        //         resultElement.style.color = 'red';
+        //         return;
+        //     }
             
-            const encrypted = "XLI WXSTLIV JVSQ XLI HEVGO";
-            let decrypted = '';
+        //     const encrypted = "XLI WXSTLIV JVSQ XLI HEVGO";
+        //     let decrypted = '';
             
-            for (let i = 0; i < encrypted.length; i++) {
-                const char = encrypted[i];
-                if (char >= 'A' && char <= 'Z') {
-                    const code = char.charCodeAt(0) - 65;
-                    const newCode = (code - shiftKey + 26) % 26;
-                    decrypted += String.fromCharCode(newCode + 65);
-                } else {
-                    decrypted += char;
-                }
-            }
+        //     for (let i = 0; i < encrypted.length; i++) {
+        //         const char = encrypted[i];
+        //         if (char >= 'A' && char <= 'Z') {
+        //             const code = char.charCodeAt(0) - 65;
+        //             const newCode = (code - shiftKey + 26) % 26;
+        //             decrypted += String.fromCharCode(newCode + 65);
+        //         } else {
+        //             decrypted += char;
+        //         }
+        //     }
             
-            resultElement.innerHTML = `РАСШИФРОВАННОЕ СООБЩЕНИЕ: <strong>${decrypted}</strong>`;
+        //     resultElement.innerHTML = `РАСШИФРОВАННОЕ СООБЩЕНИЕ: <strong>${decrypted}</strong>`;
             
-            if (shiftKey === 4) {
-                resultElement.innerHTML += '<br>🎉 ПРАВИЛЬНО! ШИФР ВЗЛОМАН!';
-                resultElement.style.color = '#00ff9d';
+        //     if (shiftKey === 4) {
+        //         resultElement.innerHTML += '<br>🎉 ПРАВИЛЬНО! ШИФР ВЗЛОМАН!';
+        //         resultElement.style.color = '#00ff9d';
                 
-                // Анимация успеха
-                const game = document.getElementById('encryptionGame');
-                game.style.animation = 'none';
-                setTimeout(() => {
-                    game.style.animation = 'random-glitch 0.5s';
-                }, 100);
-            } else {
-                resultElement.style.color = 'red';
-            }
-        }
+        //         // Анимация успеха
+        //         const game = document.getElementById('encryptionGame');
+        //         game.style.animation = 'none';
+        //         setTimeout(() => {
+        //             game.style.animation = 'random-glitch 0.5s';
+        //         }, 100);
+        //     } else {
+        //         resultElement.style.color = 'red';
+        //     }
+        // }
 
         // Allow Enter key to send messages
         document.addEventListener('DOMContentLoaded', function() {

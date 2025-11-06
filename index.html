@@ -33,6 +33,9 @@
         <div class="container hero__content">
             <div class="hero__text">
                 <h1 class="hero__title glitch-text" data-text="КИРИЛЛ">КИРИЛЛ</h1>
+                <div class="hero__image">
+                    <img src="images\avatar.jpg" style="border-radius: 10px;" width="320" height="320" alt="Кирилл_Крестин">
+                </div>
                 <p class="hero__subtitle">ЭФБО-05-24 | ВЫЖИВШИЙ РАЗРАБОТЧИК</p>
                 <div class="terminal">
                     <div class="terminal__text">
@@ -49,12 +52,9 @@
                     Каждая строка — это вызов забвению, каждый проект — надежда на возрождение.
                 </p>
                 <div class="hero__buttons">
-                    <a href="projects.html" class="btn">Мои проекты</a>
-                    <a href="contact.html" class="btn btn--accent">Установить связь</a>
+                    <a href="assets\projects.html" class="btn">Мои проекты</a>
+                    <a href="assets\contacts.html" class="btn btn--accent">Установить связь</a>
                 </div>
-            </div>
-            <div class="hero__image">
-                <img src="https://images.unsplash.com/photo-1541336032412-2048a677540d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Постапокалиптический пейзаж">
             </div>
         </div>
     </section>
@@ -108,11 +108,11 @@
             <div class="projects__container">
                 <div class="project-card">
                     <div class="project-card__image">
-                        <img src="https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Убежище">
+                        <img src="images\space_cat.jpg" alt="Убежище">
                         <div class="project-card__overlay">
                             <div class="project-card__links">
-                                <a href="#" class="project-card__link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/KrazyKrush/my-awesome-project69" class="project-card__link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/KrazyKrush" class="project-card__link"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -128,11 +128,11 @@
                 </div>
                 <div class="project-card">
                     <div class="project-card__image">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Система коммуникации">
+                        <img src="images\valley_cat.jpg" alt="Система коммуникации">
                         <div class="project-card__overlay">
                             <div class="project-card__links">
-                                <a href="#" class="project-card__link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-card__link"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/KrazyKrush/frontend_KR2_krestin.git" class="project-card__link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/KrazyKrush" class="project-card__link"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -222,27 +222,27 @@
     </section>
 
     <!-- Languages Section -->
-    <section class="languages" id="languages">
-        <div class="container">
-            <h2 class="section__title glitch-text" data-text="ЯЗЫКИ КОММУНИКАЦИИ">ЯЗЫКИ КОММУНИКАЦИИ</h2>
-            <div class="languages__container">
-                <div class="language-card">
-                    <div class="language-card__flag">🇷🇺</div>
-                    <h3 class="language-card__name">Русский</h3>
-                    <p class="language-card__level">Родной</p>
-                </div>
-                <div class="language-card">
-                    <div class="language-card__flag">🇺🇸</div>
-                    <h3 class="language-card__name">Английский</h3>
-                    <p class="language-card__level">B2 Upper-Intermediate</p>
-                </div>
-                <div class="language-card">
-                    <div class="language-card__flag">🇩🇪</div>
-                    <h3 class="language-card__name">Немецкий</h3>
-                    <p class="language-card__level">A2 Elementary</p>
-                </div>
+    <div class="skills-grid">
+        <div class="skill-card" data-skill="russian">
+            <div class="language-card__flag">🇷🇺</div>
+            <h3 class="skill-card__title">Русский</h3>
+            <p class="skill-card__description">Родной</p>
+        </div>
+        <div class="skill-card" data-skill="english">
+            <div class="language-card">
+                <div class="language-card__flag">🇺🇸</div>
+                <h3 class="skill-card__title">Английский</h3>
+                <p class="skill-card__description">B2 Upper-Intermediate</p>
             </div>
         </div>
+        <div class="skill-card" data-skill="hebrew">
+            <div class="language-card">
+                <div class="language-card__flag">🇮🇱</div>
+                <h3 class="skill-card__title">Иврит</h3>
+                <p class="skill-card__description">A2 Elementary</p>
+            </div>
+        </div>
+    </div>
     </section>
 
     <!-- Footer -->
@@ -253,9 +253,9 @@
                     <h3 class="footer__section-title">О ВЫЖИВШЕМ</h3>
                     <p>Кирилл, группа ЭФБО-05-24. Один из немногих, кто сохранил знания технологий в постапокалиптическом мире.</p>
                     <div class="footer__social">
-                        <a href="#" class="footer__social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fas fa-satellite-dish"></i></a>
+                        <a href="https://github.com/KrazyKrush" class="footer__social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://t.me/Mr_Loremaster" class="footer__social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.roblox.com/users/551789415/profile" class="footer__social-link"><i class="fas fa-satellite-dish"></i></a>
                     </div>
                 </div>
                 <div class="footer__links">
@@ -263,7 +263,7 @@
                     <ul>
                         <li class="footer__link"><a href="index.html"><i class="fas fa-chevron-right"></i> Главная</a></li>
                         <li class="footer__link"><a href="assets/skills.html"><i class="fas fa-chevron-right"></i> Навыки</a></li>
-                        <li class="footer__link"><a href="assets/rojects.html"><i class="fas fa-chevron-right"></i> Проекты</a></li>
+                        <li class="footer__link"><a href="assets/projects.html"><i class="fas fa-chevron-right"></i> Проекты</a></li>
                         <li class="footer__link"><a href="assets/diary.html"><i class="fas fa-chevron-right"></i> Дневник</a></li>
                         <li class="footer__link"><a href="assets/contacts.html"><i class="fas fa-chevron-right"></i> Контакты</a></li>
                     </ul>
@@ -285,7 +285,7 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2023 ПОСЛЕДНИЙ ОПЛОТ ТЕХНОЛОГИЙ. ВСЕ СИСТЕМЫ АКТИВНЫ.</p>
+                <p>&copy; 2025 ПОСЛЕДНИЙ ОПЛОТ ТЕХНОЛОГИЙ. ВСЕ СИСТЕМЫ АКТИВНЫ.</p>
             </div>
         </div>
     </footer>
